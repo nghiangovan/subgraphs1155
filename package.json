@@ -1,0 +1,23 @@
+{
+  "name": "eip1155bsctestnet",
+  "version": "1.0.0",
+  "description": "",
+  "author": "nghiangovan",
+  "license": "MIT",
+  "scripts": {
+    "schema": "concat -o schema.graphql src/schema.gql node_modules/@amxx/graphprotocol-utils/schema.graphql",
+    "codegen": "graph codegen subgraph.yaml",
+    "compile": "graph build subgraph.yaml",
+    "build:all": "yarn schema && yarn codegen && yarn compile",
+    "deploy": "graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ nolanhv/eip1155bsctestnet"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0"
+  },
+  "devDependencies": {
+    "@amxx/graphprotocol-utils": "^0.1.0",
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "concat": "^1.0.3"
+  }
+}
